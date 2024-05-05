@@ -14,12 +14,11 @@
             RuleFor(x => x.Price).GreaterThan(0).WithMessage("Price is Required");
         }
     }
-    internal class CreateProductCommandHandler(IDocumentSession session, ILogger<CreateProductCommandHandler> logger) 
+    internal class CreateProductCommandHandler(IDocumentSession session) 
         : ICommandHandler<CreateProductCommand, CreateProductResult>
     {
         public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
         {
-            logger.LogInformation("CreateProductAPI is Fired");
             var product = new Product
             {
                 Name = command.Name,

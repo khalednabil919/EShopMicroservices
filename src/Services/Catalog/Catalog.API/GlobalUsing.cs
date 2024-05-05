@@ -8,4 +8,9 @@ global using BuildingBlocks.CQRS;
 global using BuildingBlocks.Behaviors;
 global using BuildingBlocks.Exceptions.Handler;
 global using Carter;
+global using Marten.Pagination;
+global using Microsoft.Extensions.Logging;
+global using System.Diagnostics;
+
+
 
