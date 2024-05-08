@@ -7,11 +7,11 @@ public class BasketRepository(IDocumentSession session) : IBasketRepository
         return basket is null? throw new BasketNotFoundException(UserName) : basket;
     } 
 
-    public async Task<string> StoreBasket(ShoppingCart shoppingCart, CancellationToken cancellationToken = default)
+    public async Task<ShoppingCart> StoreBasket(ShoppingCart shoppingCart, CancellationToken cancellationToken = default)
     {
         session.Store(shoppingCart);
         await session.SaveChangesAsync(cancellationToken);
-        return shoppingCart.UserName;
+        return shoppingCart;
     }
     public async Task<bool> DeleteBasket(string UserName, CancellationToken cancellationToken = default)
     {
