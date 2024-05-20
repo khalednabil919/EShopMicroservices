@@ -9,8 +9,7 @@ namespace Ordering.Domain.Models
         {
             ArgumentException.ThrowIfNullOrWhiteSpace(name);
             ArgumentException.ThrowIfNullOrWhiteSpace(email);
-
-            return new Customer { Id = CustomerId.of(Guid.NewGuid()), Name = name, Email = email };
+            return new Customer { Id = id, Name = name, Email = email };
 
         }
     }

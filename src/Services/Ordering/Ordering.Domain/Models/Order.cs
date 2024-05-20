@@ -12,8 +12,8 @@ public class Order:Aggregate<OrderId>
     public Address ShippingAddress { get; private set; } = default!;
     public Address BillingAddress { get; private set; } = default!;
     public Payment Payment { get; private set; } = default!;
-    public OrderStatus Status { get; private set; } = OrderStatus.Pending;
-    public decimal TotalPrice
+    public OrderStatus Status { get; private set; } = OrderStatus.Draft;
+    public double TotalPrice
     {
         get => OrderItems.Sum(x => x.Price * x.Quantity);
         private set { }
