@@ -12,10 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Order\Commands\" />
-    <Folder Include="Order\EventHandlers\" />
-    <Folder Include="Order\Queries\" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
   </ItemGroup>
 
 </Project>

@@ -45,7 +45,7 @@ public class Order:Aggregate<OrderId>
         AddDomainEvent(new OrderUpdatedEvent(this));
     }
 
-    public void Add(ProductId productId, int quantity, int price)
+    public void Add(ProductId productId, int quantity, double price)
     {
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(quantity);
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(price);

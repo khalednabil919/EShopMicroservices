@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Ordering.Domain.Models;
 public class OrderItem:Entity<OrderItemId>
 {
-    internal OrderItem(OrderId orderId, ProductId productId, int quantity, double price)
+    public OrderItem(OrderId orderId, ProductId productId, int quantity, double price)
     {
         Id = OrderItemId.of(Guid.NewGuid());
         OrderId = orderId;
