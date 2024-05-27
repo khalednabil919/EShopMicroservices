@@ -27,7 +27,7 @@ public class CreateOrderHandler(IApplicationDbContext dbContext) :
 
         var payment = Payment.of(orderDto.Payment.CardName, orderDto.Payment.CardNumber, orderDto.Payment.Expiration, orderDto.Payment.Cvv,
                                 orderDto.Payment.PaymentMethod);
-        var orderCreated = Order.Create(OrderId.of(orderDto.Id),
+        var orderCreated = Order.Create(OrderId.of(Guid.NewGuid()),
                                         CustomerId.of(orderDto.CustomerId),
                                         OrderName.of(orderDto.OrderName),
                                         shippingAddress, billingAddress, payment);

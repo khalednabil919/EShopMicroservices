@@ -5,11 +5,11 @@ public record CreateOrderResponse(Guid Id);
 public class CreateOrder : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
-    {
-        app.Map("/Orders", async (CreateOrderRequest request, ISender sender) =>
+            {
+        app.MapPost("/Orders", async (CreateOrderRequest request, ISender sender) =>
         {
             var mappedRequest = request.Adapt<CreateOrderCommand>();
-            var response = await sender.Send(mappedRequest);
+                var response = await sender.Send(mappedRequest);
             var orderCreated = response.Adapt<CreateOrderResponse>();           
             return Results.Created($"Orders/{orderCreated.Id}", orderCreated);
         })

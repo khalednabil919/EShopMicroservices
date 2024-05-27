@@ -1,4 +1,6 @@
 ﻿using BuildingBlocks.Pagination;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Mvc;
 using Ordering.Application.Orders.Queries.GetOrders;
 
 namespace Ordering.API.EndPoints;

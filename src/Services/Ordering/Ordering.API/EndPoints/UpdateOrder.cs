@@ -4,7 +4,7 @@ using Ordering.Application.Orders.Commands.UpdateOrder;
 
 namespace Ordering.API.EndPoints;
 
-public record UpdateOrderRequest(OrderDto OrderDto);
+public record UpdateOrderRequest(OrderDto Order);
 public record UpdateOrderResponse(bool IsSuccess);
 public class UpdateOrder : ICarterModule
 {

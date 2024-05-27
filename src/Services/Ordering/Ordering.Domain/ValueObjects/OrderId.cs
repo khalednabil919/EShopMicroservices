@@ -12,7 +12,7 @@ namespace Ordering.Domain.ValueObjects
         private OrderId(Guid value) => Value = value;
         public static OrderId of(Guid value)
         {
-            ArgumentException.ThrowIfNullOrEmpty(value.ToString());
+            ArgumentNullException.ThrowIfNull(value.ToString());
             if (value == Guid.Empty)
                 throw new DomainException("OrderId cannot be empty.");
 
